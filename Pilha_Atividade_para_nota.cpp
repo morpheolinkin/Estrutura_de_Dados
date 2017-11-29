@@ -1,8 +1,19 @@
+/*
+Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus de Senhor do Bonfim
+Disciplina - Estrutra de Dados
+Professor - José Honorato
+Aluno - Jefferson Medeiro da Silva
+
+Atividade sobre Pilha Estática valendo 2,0 pontos
+*/
+
+//Inclusão das bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 # define m 10
 
+//Definição da estrutura no escopo GLOBAL
 struct pilha {  	 // estrutura da pilha principal
 	int topo;
 	float elem[m];
@@ -21,7 +32,7 @@ void elementos_pares(struct pilha *P);
 void maior_menor(struct pilha *P);
 void pilha_ordenada(struct pilha *P);
 
-
+//Função que retorna o menu
 int menu (){
 	int r;
 
@@ -57,7 +68,7 @@ setlocale(LC_ALL, "");
 	///Deve primeiro inicialiar a pilha
 	inicializar_pilha(&P);
 
-    ///Chama o menu
+    ///Chama o menu atribuindo ele a variável 'r'
 	r=menu();
 
 	while (r!=11){
@@ -112,7 +123,7 @@ void inicializar_pilha (struct pilha *P){ //"pilha" é o nome da estrutura e "P"
 }
 
 
-
+//Função para empilhar os valores
  void empilhar (struct pilha *P, float x) { // recebe a pilha e o valor a ser empilhado
  	if (P->topo == m-1)	{    // vai de 0 a 9 = 10 definido
 	 	printf ("\a\aPAM!! Erro 666 DO DIABO, sua pilha está CHEIA\n");
