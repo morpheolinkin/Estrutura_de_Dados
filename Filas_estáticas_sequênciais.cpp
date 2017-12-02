@@ -8,6 +8,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 #include <stdio.h>
 #include <stdlib.h>
 #define m 10
+
 struct fila{
     int comeco, fim;
     int elem[m];
@@ -51,12 +52,32 @@ void mostrar_tudo (struct fila *F){
     if (F-> fim < F-> comeco)
         printf ("Fila Vazia");
     else {
+        
         for (i=F->comeco; i<=F->fim; i++){
-            printf("%d ", F->elem[i]);
+            printf("Posicao %d\n", i);
+            printf("%d \n", F->elem[i]);
         }
     }
     printf("\n");
 }
+
+void falso_cheio_REORGANIZAR (struct fila *F){
+    
+    int x, com = F-> comeco, final = F-> fim;
+    
+  
+    if (com > 0 && final == m-1){
+        F-> comeco = 0;
+        F-> fim = -1;
+        for (x= com; x<=final; x++){
+            F-> fim++;
+            F-> elem[F-> fim] = F -> elem[x]; 
+        }
+    }else if (com==0) {
+        printf ("Pilha esta normal");
+    } 
+}
+
 
 int menu (){
         int r;
@@ -68,7 +89,8 @@ int menu (){
         printf("|3 - EXIBIR VALOR DO INICIO    |\n");
         printf("|4 - EXIBIR A FILA             |\n");
         printf("|5 - ESVAZIAR A FILA           |\n");
-        printf("|6 - SAIR                      |\n");
+        printf("|6 - REORGANIZR                |\n");
+        printf("|7 - SAIR                      |\n");
         printf ("==============================|\n");
         printf("\t DIGITE SUA OPCAO: ");
 
@@ -85,7 +107,7 @@ int main()
     
     r = menu();
     
-    while (r!=6){
+    while (r!=7){
                 if (r==1){
                     printf("\nInforme o valor para inclusao: ");
                     scanf("%d",&dado);
@@ -104,6 +126,9 @@ int main()
                 }
                 else if (r==5){
                     inicia(&F);
+                }
+            else if (r==6){
+                falso_cheio_REORGANIZAR (&F);                    
                 }
             system("pause");       
             system ("cls");
