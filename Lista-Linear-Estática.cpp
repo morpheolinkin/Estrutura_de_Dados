@@ -131,7 +131,7 @@ void destruir_Lista(LISTA *L){///Aqui é só atribuir 0 ao numero de elmentos da
 
 int menu_da_Lista (){
     int escolha;
-printf("=========================================================\n");
+printf("========================================================\n");
         printf("1 - Criar Listas\n");
         printf("2 - Inserir Inicio\n");
         printf("3 - Inserir Final\n");
