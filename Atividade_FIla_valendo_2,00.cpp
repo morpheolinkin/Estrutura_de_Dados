@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#define m 2
+#define m 10
 
 typedef struct{
     int comeco, fim;
