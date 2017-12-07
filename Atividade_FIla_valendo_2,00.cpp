@@ -10,7 +10,6 @@ typedef struct{
     float nota_prova[m];
 }fila;
 
-
 void inicia (fila *F){
     F -> comeco = 0;
     F-> fim = -1;
