@@ -3,17 +3,22 @@ Esse nome não é por acaso. Até porque a fila é realmente uma fila (nossa). S
 Por exemplo, temos uma fila com 5 pessoas:
 
 1	2	3	4	5
+
 Caso a primeira pessoa seja chamada, a fila irá diminuir:
 
 2	3	4	5
+
 3	4	5
 E assim por diante...
 
 Caso chegue alguma pessoa, ela não entrará em qualquer lugar da fila, apenas no final.
 
 3	4	5	6
+
 3	4	5	6	7
+
 Código exemplo
+
 Primeiramente definimos nossa estrutura (struct):
 
 #define X 10
